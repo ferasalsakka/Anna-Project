@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <link rel="stylesheet" href="Styles_Meetings.css">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Client Meeting Schedule</title>
+</head>
+<body>
+    <div class="container">
+        <h2>Schedule Client Meeting</h2>
+        <form id="meetingForm">
+            <label for="clientSelect">Select Client:</label>
+            <select id="clientSelect" name="clientSelect" required>
+                <option value="client1">Client 1</option>
+                <option value="client2">Client 2</option>
+                <option value="client3">Client 3</option>
+                <option value="client4">Client 4</option>
+                <option value="client5">Client 5</option>
+
+            </select>
+
+            <label for="meetingDate">Meeting Date:</label>
+            <input type="date" id="meetingDate" name="meetingDate" required>
+
+            <label for="meetingTime">Meeting Time:</label>
+            <input type="time" id="meetingTime" name="meetingTime" required>
+
+            <label for="meetingplace">Meeting Place:</label>
+            <textarea id="meetingplace" name="meetingplace" rows="1" required></textarea>
+
+            <label for="meetingAgenda">Meeting Agenda:</label>
+            <textarea id="meetingAgenda" name="meetingAgenda" rows="4" required></textarea>
+
+            <button type="button" onclick="scheduleMeeting()">Schedule Meeting</button>
+        </form>
+    </div>
+    <script>
+    function scheduleMeeting() {
+        var meetingDate = document.getElementById("meetingDate").value;
+
+        var currentDate = new Date();
+        var selectedDate = new Date(meetingDate);
+
+        if (selectedDate < currentDate) {
+            alert("Please select a future date for the meeting.");
+            return;
+        }
+
+        alert("Meeting scheduled successfully!");
+    }
+</script>
+</body>
+</html>
