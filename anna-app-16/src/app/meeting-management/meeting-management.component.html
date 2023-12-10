@@ -1,0 +1,27 @@
+
+<div class="container">
+    <h2>Schedule Client Meeting</h2>
+    <form (ngSubmit)="scheduleMeeting()">
+      <label for="clientSelect">Select Client:</label>
+      <select id="clientSelect" name="clientSelect" [(ngModel)]="selectedClient" required>
+        <option value="client1">Client 1</option>
+        <option value="client2">Client 2</option>
+        <option value="client3">Client 3</option>
+        <option value="client3">Client 4</option>
+        <option value="client3">Client 5</option>
+
+      </select>
+  
+      <label for="meetingDate">Meeting Date:</label>
+      <input type="date" id="meetingDate" name="meetingDate" [(ngModel)]="meetingDate" required>
+  
+      <label for="meetingTime">Meeting Time:</label>
+      <input type="time" id="meetingTime" name="meetingTime" [(ngModel)]="meetingTime" required>
+  
+      <label for="meetingAgenda">Meeting Agenda:</label>
+      <textarea id="meetingAgenda" name="meetingAgenda" [(ngModel)]="meetingAgenda" rows="4" required></textarea>
+  
+      <button type="submit">Schedule Meeting</button>
+    </form>
+  </div>
+  
